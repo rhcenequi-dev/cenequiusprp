@@ -12,13 +12,13 @@
   <!-- Coloque um favicon depois: <link rel="icon" href="/favicon.ico"> -->
   <style>
     :root{
-      --bg:#f7f3ef;
-      --card:#ffffff;
-      --text:#2a211c;
-      --muted:#6e625b;
-      --accent:#4b2e83;
-      --accent-2:#cbb6ff;
-      --ring: #e8ded7;
+      --bg:#f7f3ef;          
+      --card:#ffffff;        
+      --text:#2a211c;        
+      --muted:#6e625b;       
+      --accent:#4b2e83;      
+      --accent-2:#cbb6ff;    
+      --ring: #e8ded7;       
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -42,6 +42,7 @@
     .cta-btn{background:var(--accent); color:#fff; padding:.6rem 1rem; border-radius:12px; font-weight:600}
     .cta-btn:hover{filter:brightness(1.05)}
     .menu-btn{display:none}
+
     .hero{padding:64px 0 32px}
     .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center}
     .eyebrow{display:inline-flex; gap:.5rem; align-items:center; background:#fff; border:1px solid var(--ring); padding:.35rem .6rem; border-radius:999px; color:var(--muted); font-size:.85rem}
@@ -61,21 +62,27 @@
     .dot{width:10px;height:10px;border-radius:999px;background:var(--accent-2)}
     .card-row{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:12px}
     .mini-card{background:var(--bg); border:1px solid var(--ring); height:110px; border-radius:12px; padding:10px}
+
     section{padding:56px 0}
     .section-title{font-size:1.9rem; margin:0 0 8px}
     .section-lead{color:var(--muted); margin:0 0 24px}
+
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
     .card{background:#fff; border:1px solid var(--ring); border-radius:16px; padding:18px; box-shadow:0 6px 18px color-mix(in srgb,#000 6%,transparent)}
     .card h3{margin:0 0 6px}
     .badge{display:inline-block; font-size:.78rem; padding:.25rem .5rem; border-radius:999px; background:var(--accent-2); color:#3d2a22}
+
     .portfolio{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
     .thumb{aspect-ratio:4/3; background:linear-gradient(135deg, var(--accent-2), #f9ede6); border:1px solid var(--ring); border-radius:16px; display:grid; place-items:center; font-weight:600; color:#3d2a22}
+
     form{display:grid; gap:12px; max-width:560px}
     input, textarea{width:100%; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--ring); background:#fff; color:var(--text); font:inherit}
     textarea{min-height:140px; resize:vertical}
     .form-row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
     .help{color:var(--muted); font-size:.9rem}
+
     footer{padding:32px 0; border-top:1px solid var(--ring); color:var(--muted)}
+
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr;}
       .portfolio,.grid-3{grid-template-columns:1fr 1fr}
@@ -89,6 +96,171 @@
   </style>
 </head>
 <body>
-  <!-- Conteúdo omitido por brevidade, já está no canvas completo -->
-</body>
-</html>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Início">
+        <span class="logo">CQ</span>
+        <span>CENEQui — Química USP-RP</span>
+      </a>
+      <button class="menu-btn" aria-label="Abrir menu" onclick="toggleMenu()">☰</button>
+      <nav>
+        <ul id="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#fotos">Fotos</a></li>
+          <li><a href="#certificados">Certificados</a></li>
+          <li><a href="#contato" class="cta-btn">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">📣 Centro Estudantil da Química — USP Ribeirão Preto</span>
+        <h1>Representação estudantil, eventos e oportunidades em Química</h1>
+        <p class="lead">O CENEQui promove integração, formação e voz para quem vive a Química na USP-RP. Aqui você encontra avisos, agenda de eventos, projetos, editais e formas de participar.</p>
+        <div class="hero-actions">
+          <a class="cta-btn" target="_blank" rel="noopener" href="https://www.instagram.com/cenequi/">Seguir no Instagram</a>
+          <a class="outline-btn" target="_blank" rel="noopener" href="https://www.instagram.com/churrasdaquimica/">Churras da Química</a>
+        </div>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="window">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="card-row">
+            <div class="mini-card"></div>
+            <div class="mini-card"></div>
+            <div class="mini-card"></div>
+            <div class="mini-card" style="grid-column: span 2"></div>
+            <div class="mini-card"></div>
+            <div class="mini-card"></div>
+            <div class="mini-card"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Sobre ===== -->
+  <section id="sobre">
+    <div class="container">
+      <h2 class="section-title">Sobre o CENEQui</h2>
+      <p class="section-lead">Somos o Centro Estudantil da Química da USP Ribeirão Preto (USP-RP). Trabalhamos para fortalecer o curso, acolher calouros, organizar eventos acadêmicos e culturais e representar os estudantes.</p>
+      <div class="card">
+        <p><strong>Missão:</strong> promover participação estudantil, formação complementar e integração entre graduação, pós e comunidade.</p>
+        <p><strong>Frentes:</strong> recepção de calouros, Semana da Química, oficinas, palestras, ações culturais e esportivas, apoio a projetos como o <em>Churras da Química</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Notícias ===== -->
+  <section id="noticias">
+    <div class="container">
+      <h2 class="section-title">Notícias</h2>
+      <p class="section-lead">Atualizações recentes do nosso Instagram.</p>
+      <div class="grid-3">
+        <a class="card" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DOll1f2kVzy/">
+          <span class="badge">Set 2025</span>
+          <h3>Semana da Química — vem aí!</h3>
+          <p>Reel convocando para a 50ª Semana da Química.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://www.instagram.com/p/DOzFL_gkcmc/">
+          <span class="badge">Set 2025</span>
+          <h3>Palestra confirmada</h3>
+          <p>Anúncio de palestra para a Semana da Química.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://www.instagram.com/p/DPMP1pskdLf/">
+          <span class="badge">Out 2025</span>
+          <h3>Cronograma completo</h3>
+          <p>Post com o cronograma da Semana da Química.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Eventos ===== -->
+  <section id="eventos">
+    <div class="container">
+      <h2 class="section-title">Eventos</h2>
+      <p class="section-lead">Alguns destaques recorrentes.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Semana da Química</h3>
+          <p>Oficinas, palestras e integração. Acompanhe as datas no Instagram.</p>
+        </div>
+        <div class="card">
+          <h3>Recepção de Calouros</h3>
+          <p>Atividades de acolhimento e gincanas com entidades do departamento.</p>
+        </div>
+        <a class="card" target="_blank" rel="noopener" href="https://www.instagram.com/churrasdaquimica/">
+          <h3>Churras da Química</h3>
+          <p>Eventos sociais organizados com apoio do CENEQui.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projetos ===== -->
+  <section id="projetos">
+    <div class="container">
+      <h2 class="section-title">Projetos & Editais</h2>
+      <p class="section-lead">Acompanhe processos seletivos, comissões e grupos de trabalho.</p>
+      <div class="grid-3">
+        <a class="card" target="_blank" rel="noopener" href="https://www.instagram.com/p/DHBjGsyxobW/">
+          <span class="badge">Mar 2025</span>
+          <h3>Processo Seletivo</h3>
+          <p>Chamada para integrar o CENEQui.</p>
+        </a>
+        <div class="card">
+          <h3>Parcerias</h3>
+          <p>Integração com PIBID, PET, Soluções Química Jr., CEIQ e outras entidades.</p>
+        </div>
+        <div class="card">
+          <h3>Comunicação</h3>
+          <p>Divulgação de oportunidades de estágios, palestras e oficinas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Fotos ===== -->
+  <section id="fotos">
+    <div class="container">
+      <h2 class="section-title">Fotos de Eventos</h2>
+      <p class="section-lead">Álbuns da Recepção aos calouros, Churras da Química, Dia do Químico, Semana da Química e Intrafilo.</p>
+      <div class="portfolio" id="galeria">
+        <a href="/fotos/palestra-publico.jpg" class="thumb" data-title="Semana da Química 2025 — Público da palestra">Público</a>
+        <a href="/fotos/apresentacao-projetor.jpg" class="thumb" data-title="Semana da Química 2025 — Apresentação com projetor">Apresentação</a>
+        <a href="/fotos/palestrante-joana.jpg" class="thumb" data-title="Semana da Química 2025 — Palestrante Joana">Palestrante Joana</a>
+        <a href="/fotos/palestrante-eliane.jpg" class="thumb" data-title="Semana da Química 2025 — Palestrante Eliane">Palestrante Eliane</a>
+      </div>
+      <p class="help">Dica: organize como <code>/fotos/ANO-evento/arquivo.jpg</code>. O clique abre em tela cheia.</p>
+    </div>
+  </section>
+
+  <!-- ===== Certificados ===== -->
+  <section id="certificados">
+    <div class="container">
+      <h2 class="section-title">Certificados</h2>
+      <p class="section-lead">Baixe seu certificado informando o evento e seu CPF (somente números). Arquivos internos: <code>/certificados/ANO-evento/CPF.pdf</code>.</p>
+
+      <form id="form-cert" onsubmit="baixarCertificado(event)">
+        <div class="form-row">
+          <div>
+            <label for="evento">Evento</label>
+            <select id="evento" name="evento" required style="width:100%; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--ring); background:#fff; font:inherit">
+              <option value="" disabled selected>Selecione…</option>
+              <option value="2025-recepcao">Recepção aos calouros 2025</option>
+              <option value="2025-churras">Churras da Química 2025</option>
+              <option value="2025-dia-do-quimico">Dia do Químico 2025</option>
+              <option value="2025-semana">Semana da Química 2025</option>
+              <option value="2025-intrafilo">Intrafilo 2025</option>
+            </select>
+          </div>
+         
