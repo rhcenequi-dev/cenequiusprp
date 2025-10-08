@@ -263,4 +263,71 @@
               <option value="2025-intrafilo">Intrafilo 2025</option>
             </select>
           </div>
-         
+                 <div>
+          <label for="tipo">Tipo de certificado</label>
+          <select id="tipo" name="tipo" style="width:100%; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--ring); background:#fff; font:inherit">
+            <option value="participante">Participante</option>
+            <option value="palestrante">Palestrante</option>
+            <option value="organizacao">Organização</option>
+          </select>
+        </div>
+        <div style="display:flex; gap:.75rem; align-items:center; flex-wrap:wrap; margin-top:.5rem">
+          <button class="cta-btn" type="submit">Baixar certificado</button>
+          <span class="help">Ex.: <code>/certificados/2025-semana/12345678901.pdf</code></span>
+        </div>
+      </form>
+
+      <p class="help">Privacidade: podemos trocar o CPF por um código único (hash) se preferirem.</p>
+    </div>
+  </section>
+
+  <!-- ===== Links ===== -->
+  <section id="links">
+    <div class="container">
+      <h2 class="section-title">Links Úteis</h2>
+      <p class="section-lead">Redes e parceiros.</p>
+      <div class="portfolio">
+        <a class="thumb" target="_blank" rel="noopener" href="https://www.instagram.com/cenequi/">Instagram CENEQui</a>
+        <a class="thumb" target="_blank" rel="noopener" href="https://www.instagram.com/churrasdaquimica/">Churras da Química</a>
+        <a class="thumb" target="_blank" rel="noopener" href="https://www.instagram.com/ceiqusp/">CEIQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contato ===== -->
+  <section id="contato">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <p class="section-lead">Fale com o CENEQui por e-mail ou direct no Instagram.</p>
+
+      <form onsubmit="enviarFormulario(event)">
+        <div class="form-row">
+          <div>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" required placeholder="Seu nome" />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email" required placeholder="seuemail@usp.br" />
+          </div>
+        </div>
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte como podemos ajudar..."></textarea>
+        </div>
+        <div style="display:flex; gap:.75rem; align-items:center; flex-wrap:wrap">
+          <button class="cta-btn" type="submit">Enviar e-mail</button>
+          <a class="outline-btn" target="_blank" rel="noopener" href="https://www.instagram.com/cenequi/">Mandar DM</a>
+          <span class="help">O formulário abre seu cliente de e-mail padrão.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <span>© <span id="year"></span> CENEQui — Química USP-RP. Todos os direitos reservados.</span>
+      <span>Feito com ♥ em Ribeirão Preto — SP</span>
+    </div>
+  </footer>
+
